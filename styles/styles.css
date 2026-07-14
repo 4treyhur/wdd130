@@ -18,6 +18,17 @@ h1 {
     color: forestgreen;
 }
 
+nav {
+    padding: 1rem;
+    background-color: lightgreen;
+}
+
+nav a {
+    padding: 1rem;
+    color: aliceblue;
+    display: block;
+}
+
 aside {
     width: 20rem;
     margin: 1rem;
