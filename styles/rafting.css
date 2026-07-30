@@ -58,15 +58,15 @@ article {
     padding: 8px;
 }
 
-/* ---------- Header nav links: use secondary-color for contrast against the dark green bar ---------- */
+/* ---------- Header links: accent2 has stronger contrast against the dark green bar ---------- */
 header a {
-    color: var(--secondary-color);
+    color: var(--accent2-color);
     text-decoration: none;
 }
 
 header a:hover,
 header a:focus {
-    color: var(--accent2-color);
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
@@ -122,7 +122,7 @@ header a:focus {
     transform: translateX(-50%);
     margin: 0;
     padding: 8px 24px;
-    background-color: rgba(5, 90, 5, 0.75);
+    background-color: var(--primary-color);
     color: var(--accent2-color);
     border-radius: 4px;
     white-space: nowrap;
@@ -135,7 +135,7 @@ header a:focus {
     bottom: 24px;
     margin: 0;
     padding: 16px;
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: #ffffff;
     color: var(--accent1-color);
     border-radius: 6px;
     overflow: hidden;
@@ -167,6 +167,7 @@ section p {
 }
 
 section.cta {
+    background-color: #fdf0e2;
     border-top: 4px solid var(--secondary-color);
 }
 
