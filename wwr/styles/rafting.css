@@ -1,11 +1,11 @@
 :root {
     --primary-color: #055a05;
     /* forest green */
-    --secondary-color: #f0c9aa;
+    --secondary-color: #f4a261;
     /* warm sand */
     --accent1-color: #264653;
     /* dark slate blue */
-    --accent2-color: #e6deca;
+    --accent2-color: #e9c46a;
     /* light golden yellow */
     --heading-font: "Times New Roman", "Georgia", serif;
     --body-font: Arial, Helvetica, sans-serif;
@@ -22,6 +22,11 @@ body {
     color: var(--accent1-color);
 }
 
+html,
+body {
+    width: 100%;
+}
+
 /* ---------- Header & Footer bars (full width, centered content) ---------- */
 header,
 footer {
@@ -31,9 +36,18 @@ footer {
 }
 
 .wrap {
+    width: 100%;
     max-width: 840px;
     margin: 0 auto;
     padding: 16px;
+}
+
+/* Header uses CSS Grid: logo in column 1, nav in column 2 */
+.header_inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 16px;
 }
 
 h1,
@@ -50,29 +64,51 @@ article {
     padding: 8px;
 }
 
-/* ---------- Header nav links: use secondary-color for contrast against the dark green bar ---------- */
+/* ---------- Header links: accent2 has stronger contrast against the dark green bar ---------- */
 header a {
-    color: var(--secondary-color);
+    color: var(--accent2-color);
     text-decoration: none;
 }
 
 header a:hover,
 header a:focus {
-    color: var(--accent2-color);
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
 .logo img {
-    max-width: 120px;
+    max-width: 100px;
     display: block;
 }
 
+.site_nave {
+    justify-self: end;
+}
+
 .site_nave ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     list-style: none;
 }
 
 .site_nave li {
-    margin: 4px 0;
+    margin: 0;
+}
+
+.site_nave a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: var(--accent1-color);
+    border: 1px solid var(--accent1-color);
+    border-radius: 4px;
+}
+
+.site_nave a:hover,
+.site_nave a:focus {
+    background-color: var(--accent2-color);
+    text-decoration: none;
 }
 
 /* ---------- Hero: image with title and intro overlaid on top ---------- */
@@ -96,7 +132,7 @@ header a:focus {
     transform: translateX(-50%);
     margin: 0;
     padding: 8px 24px;
-    background-color: rgba(5, 90, 5, 0.75);
+    background-color: var(--primary-color);
     color: var(--accent2-color);
     border-radius: 4px;
     white-space: nowrap;
@@ -109,7 +145,7 @@ header a:focus {
     bottom: 24px;
     margin: 0;
     padding: 16px;
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: #ffffff;
     color: var(--accent1-color);
     border-radius: 6px;
     overflow: hidden;
@@ -141,9 +177,58 @@ section p {
 }
 
 section.cta {
-    background-color: var(--secondary-color);
+    background-color: #fdf0e2;
+    border-top: 4px solid var(--secondary-color);
+}
+
+/* ---------- History: text / image / text row ---------- */
+.history_row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+}
+
+.history_row p {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.history_row img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+/* ---------- Adventure Awaits You: figure gallery ---------- */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.gallery figure {
+    margin: 0;
+    width: 120px;
+    text-align: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.gallery figcaption {
+    margin-top: 6px;
+    font-size: 0.85rem;
     color: var(--accent1-color);
-    border-color: var(--secondary-color);
 }
 
 /* ---------- Footer ---------- */
@@ -175,4 +260,12 @@ section.cta {
 .socialmedia img {
     width: 24px;
     height: 24px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .history_row {
+        flex-direction: column;
+        text-align: center;
+    }
 }
