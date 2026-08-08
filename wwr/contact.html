@@ -45,8 +45,8 @@
             <div class="map">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.772710471003!2d-96.79165232478807!3d19.33566668192312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c4c9ba42fb503b%3A0x5dcb46800586506f!2sRio%20Antigua%20Rafting!5e0!3m2!1ses!2smx!4v1786027305375!5m2!1ses!2smx"
-                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                  allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                  title="Map showing Z Rapid Trees location"></iframe>
             </div>
 
             <form class="contact_form">
@@ -62,11 +62,14 @@
 
                 <fieldset class="form_group">
                     <legend>Message Purpose</legend>
-                    <label><input type="radio" name="purpose" value="general" checked> General
+                    <label><input type="radio" id="purpose_general" name="purpose" value="general"
+                          checked> General
                         Inquiry</label>
-                    <label><input type="radio" name="purpose" value="reservation"> Reservation
+                    <label><input type="radio" id="purpose_reservation" name="purpose"
+                          value="reservation"> Reservation
                         Question</label>
-                    <label><input type="radio" name="purpose" value="suggestion"> Website
+                    <label><input type="radio" id="purpose_suggestion" name="purpose"
+                          value="suggestion"> Website
                         Suggestion</label>
                 </fieldset>
 
@@ -76,7 +79,8 @@
                 </div>
 
                 <div class="form_group checkbox_group">
-                    <label><input type="checkbox" name="subscribe"> Please Subscribe me to the
+                    <label><input type="checkbox" id="subscribe" name="subscribe"> Please Subscribe
+                        me to the
                         monthly newsletter</label>
                 </div>
 
